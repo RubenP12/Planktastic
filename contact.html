@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planktastic — Contact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img id="nav-logo-img" src="logos/transferir.png" alt="Planktastic">
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html"      data-page="home"       data-en="Home"       data-pt="Início">Home</a>
+      <a href="about.html"      data-page="about"      data-en="About"      data-pt="Sobre">About</a>
+      <a href="activities.html" data-page="activities" data-en="Activities"  data-pt="Atividades">Activities</a>
+      <a href="outputs.html"    data-page="outputs"    data-en="Outputs"    data-pt="Resultados">Outputs</a>
+      <a href="news.html"       data-page="news"       data-en="News"       data-pt="Notícias">News</a>
+      <a href="team.html"       data-page="team"       data-en="Team"       data-pt="Equipa">Team</a>
+      <a href="contact.html"    data-page="contact"    data-en="Contact"    data-pt="Contacto">Contact</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-sw">
+        <button class="ls-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+        <button class="ls-btn" data-lang="pt" onclick="setLang('pt')">PT</button>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" onclick="toggleMobile()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html"      data-page="home"       data-en="Home"       data-pt="Início">Home</a>
+  <a href="about.html"      data-page="about"      data-en="About"      data-pt="Sobre">About</a>
+  <a href="activities.html" data-page="activities" data-en="Activities"  data-pt="Atividades">Activities</a>
+  <a href="outputs.html"    data-page="outputs"    data-en="Outputs"    data-pt="Resultados">Outputs</a>
+  <a href="news.html"       data-page="news"       data-en="News"       data-pt="Notícias">News</a>
+  <a href="team.html"       data-page="team"       data-en="Team"       data-pt="Equipa">Team</a>
+  <a href="contact.html"    data-page="contact"    data-en="Contact"    data-pt="Contacto">Contact</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <h1 data-en="Contact" data-pt="Contacto">Contact</h1>
+  <p data-en="Get in touch with the Planktastic team" data-pt="Entre em contacto com a equipa Planktastic">Get in touch with the Planktastic team</p>
+</div>
+
+<!-- CONTACT CONTENT -->
+<section class="sec sec-light">
+  <div class="wrap">
+    <div class="contact-grid">
+
+      <!-- LEFT: contact info -->
+      <div class="contact-left reveal">
+        <div class="sec-kicker" data-en="Let's Talk" data-pt="Vamos Falar">Let's Talk</div>
+        <h2 class="sec-title" style="margin-bottom:1rem" data-en="Get in Touch" data-pt="Entre em Contacto">Get in Touch</h2>
+        <p data-editable="contact-intro">Interested in collaborating, following our work, or learning more about Planktastic? We'd love to hear from you.</p>
+        <div class="ctt-items">
+          <div class="ctt-item">
+            <div class="ci-ico-svg"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div>
+              <div class="ci-lbl">Email</div>
+              <div class="ci-val"><a href="mailto:planktastic@ciimar.up.pt" style="color:var(--blue);text-decoration:none">planktastic@ciimar.up.pt</a></div>
+            </div>
+          </div>
+          <div class="ctt-item">
+            <div class="ci-ico-svg"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div>
+              <div class="ci-lbl" data-en="Address" data-pt="Endereço">Address</div>
+              <div class="ci-val">CIIMAR — Av. General Norton de Matos, S/N<br>4450-208 Matosinhos, Portugal</div>
+            </div>
+          </div>
+          <div class="ctt-item">
+            <div class="ci-ico-svg"><svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+            <div>
+              <div class="ci-lbl" data-en="Project Reference" data-pt="Referência do Projeto">Project Reference</div>
+              <div class="ci-val">COMPETE2030-FEDER-00801600</div>
+            </div>
+          </div>
+        </div>
+        <div class="ctt-social">
+          <a href="#" class="social-ico" aria-label="Instagram" data-link-editable="social-instagram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="social-ico" aria-label="Facebook" data-link-editable="social-facebook" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-ico" aria-label="LinkedIn" data-link-editable="social-linkedin" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="social-ico" aria-label="X" data-link-editable="social-x" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: contact form + mailing list -->
+      <div class="reveal" style="transition-delay:.15s">
+        <form class="ctt-form" onsubmit="sendContactForm(event)">
+          <div class="frow">
+            <div class="fg"><label data-en="First Name" data-pt="Nome">First Name</label><input id="cf-first" type="text" placeholder="Jane"></div>
+            <div class="fg"><label data-en="Last Name" data-pt="Apelido">Last Name</label><input id="cf-last" type="text" placeholder="Smith"></div>
+          </div>
+          <div class="fg"><label data-en="Email" data-pt="Email">Email *</label><input id="cf-email" type="email" placeholder="jane@institution.edu" required></div>
+          <div class="fg"><label data-en="Message" data-pt="Mensagem">Message *</label><textarea id="cf-msg" rows="5" placeholder="Your question or message..." required></textarea></div>
+          <button type="submit" class="btn-submit" data-en="Send Message →" data-pt="Enviar Mensagem →">Send Message →</button>
+          <div id="cf-status" style="display:none"></div>
+        </form>
+
+        <div class="mail-list-box">
+          <p class="ml-heading" data-en="Join our mailing list to receive project news!" data-pt="Subscreva a nossa lista de correio para receber novidades do projeto!">Join our mailing list to receive project news!</p>
+          <div class="ml-row">
+            <div class="fg" style="flex:1"><label>Email *</label><input id="ml-email" type="email" placeholder="your@email.com"></div>
+            <button type="button" class="btn-subscribe" onclick="subscribeMailList()" data-en="Subscribe" data-pt="Subscrever">Subscribe</button>
+          </div>
+          <label class="ml-consent"><input id="ml-consent" type="checkbox"> <span data-en="I want to subscribe to the Planktastic mailing list." data-pt="Quero subscrever a lista de correio do Planktastic.">I want to subscribe to the Planktastic mailing list.</span></label>
+          <div id="ml-status" style="display:none"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="partner-bar">
+    <div class="wrap">
+      <div class="pbar-inner">
+        <div class="pbar-col">
+          <div class="pbar-label" data-en="PARTNERS" data-pt="PARCEIROS">PARTNERS</div>
+          <div class="pbar-logos">
+            <img src="logos/ciimar_logo_cores.png" alt="CIIMAR" class="logo-partner">
+            <img src="logos/inesctec.png" alt="INESC TEC" class="logo-partner">
+          </div>
+        </div>
+        <div class="pbar-sep"></div>
+        <div class="pbar-col">
+          <div class="pbar-label" data-en="FUNDED BY" data-pt="FINANCIADO POR">FUNDED BY</div>
+          <div class="pbar-logos">
+            <img src="logos/compete2030.png" alt="COMPETE 2030 · Portugal 2030 · EU" class="logo-compete">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bottom"><div class="wrap"><span>© 2025 Planktastic — CIIMAR &amp; INESC TEC | COMPETE2030-FEDER-00801600</span></div></div>
+</footer>
+
+<script src="js/content-data.js"></script>
+<script src="js/common.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planktastic — Outputs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img id="nav-logo-img" src="logos/transferir.png" alt="Planktastic">
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html"      data-page="home"       data-en="Home"       data-pt="Início">Home</a>
+      <a href="about.html"      data-page="about"      data-en="About"      data-pt="Sobre">About</a>
+      <a href="activities.html" data-page="activities" data-en="Activities"  data-pt="Atividades">Activities</a>
+      <a href="outputs.html"    data-page="outputs"    data-en="Outputs"    data-pt="Resultados">Outputs</a>
+      <a href="news.html"       data-page="news"       data-en="News"       data-pt="Notícias">News</a>
+      <a href="team.html"       data-page="team"       data-en="Team"       data-pt="Equipa">Team</a>
+      <a href="contact.html"    data-page="contact"    data-en="Contact"    data-pt="Contacto">Contact</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-sw">
+        <button class="ls-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+        <button class="ls-btn" data-lang="pt" onclick="setLang('pt')">PT</button>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" onclick="toggleMobile()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html"      data-page="home"       data-en="Home"       data-pt="Início">Home</a>
+  <a href="about.html"      data-page="about"      data-en="About"      data-pt="Sobre">About</a>
+  <a href="activities.html" data-page="activities" data-en="Activities"  data-pt="Atividades">Activities</a>
+  <a href="outputs.html"    data-page="outputs"    data-en="Outputs"    data-pt="Resultados">Outputs</a>
+  <a href="news.html"       data-page="news"       data-en="News"       data-pt="Notícias">News</a>
+  <a href="team.html"       data-page="team"       data-en="Team"       data-pt="Equipa">Team</a>
+  <a href="contact.html"    data-page="contact"    data-en="Contact"    data-pt="Contacto">Contact</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <h1 data-en="Outputs" data-pt="Resultados">Outputs</h1>
+  <p data-en="Publications, datasets and scientific contributions from Planktastic" data-pt="Publicações, conjuntos de dados e contribuições científicas do Planktastic">Publications, datasets and scientific contributions from Planktastic</p>
+</div>
+
+<!-- OUTPUTS CONTENT -->
+<section class="sec sec-light">
+  <div class="wrap">
+    <div class="output-section reveal">
+      <h3 data-en="Publications" data-pt="Publicações">Publications</h3>
+      <div class="output-empty">
+        <strong data-editable="outputs-pub-label"></strong>
+        <p data-editable="outputs-pub">Scientific publications will be listed here as the project progresses. All publications will be open-access, following FCT and EU open science policy.</p>
+      </div>
+    </div>
+    <div class="output-section reveal">
+      <h3 data-en="Datasets" data-pt="Base de Dados">Datasets</h3>
+      <div class="output-empty">
+        <strong data-editable="outputs-data-label"></strong>
+        <p data-editable="outputs-data">The open-access FAIR baseline dataset of microplastics and plankton from Portuguese estuaries will be available here from December 2025.</p>
+      </div>
+    </div>
+    <div class="output-section reveal">
+      <h3 data-en="Conference Presentations" data-pt="Apresentações em Conferências">Conference Presentations</h3>
+      <div class="output-empty">
+        <strong data-editable="outputs-conf-label"></strong>
+        <p data-editable="outputs-conf">Conference presentations and posters will be listed here as the team participates in national and international scientific meetings.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="partner-bar">
+    <div class="wrap">
+      <div class="pbar-inner">
+        <div class="pbar-col">
+          <div class="pbar-label" data-en="PARTNERS" data-pt="PARCEIROS">PARTNERS</div>
+          <div class="pbar-logos">
+            <img src="logos/ciimar_logo_cores.png" alt="CIIMAR" class="logo-partner">
+            <img src="logos/inesctec.png" alt="INESC TEC" class="logo-partner">
+          </div>
+        </div>
+        <div class="pbar-sep"></div>
+        <div class="pbar-col">
+          <div class="pbar-label" data-en="FUNDED BY" data-pt="FINANCIADO POR">FUNDED BY</div>
+          <div class="pbar-logos">
+            <img src="logos/compete2030.png" alt="COMPETE 2030 · Portugal 2030 · EU" class="logo-compete">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bottom"><div class="wrap"><span>© 2025 Planktastic — CIIMAR &amp; INESC TEC | COMPETE2030-FEDER-00801600</span></div></div>
+</footer>
+
+<script src="js/content-data.js"></script>
+<script src="js/common.js"></script>
+</body>
+</html>
+
+

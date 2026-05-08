@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planktastic — Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img id="nav-logo-img" src="logos/transferir.png" alt="Planktastic">
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html"      data-page="home"       data-en="Home"       data-pt="Início">Home</a>
+      <a href="about.html"      data-page="about"      data-en="About"      data-pt="Sobre">About</a>
+      <a href="activities.html" data-page="activities" data-en="Activities"  data-pt="Atividades">Activities</a>
+      <a href="outputs.html"    data-page="outputs"    data-en="Outputs"    data-pt="Resultados">Outputs</a>
+      <a href="news.html"       data-page="news"       data-en="News"       data-pt="Notícias">News</a>
+      <a href="team.html"       data-page="team"       data-en="Team"       data-pt="Equipa">Team</a>
+      <a href="contact.html"    data-page="contact"    data-en="Contact"    data-pt="Contacto">Contact</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-sw">
+        <button class="ls-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+        <button class="ls-btn" data-lang="pt" onclick="setLang('pt')">PT</button>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" onclick="toggleMobile()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html"      data-page="home"       data-en="Home"       data-pt="Início">Home</a>
+  <a href="about.html"      data-page="about"      data-en="About"      data-pt="Sobre">About</a>
+  <a href="activities.html" data-page="activities" data-en="Activities"  data-pt="Atividades">Activities</a>
+  <a href="outputs.html"    data-page="outputs"    data-en="Outputs"    data-pt="Resultados">Outputs</a>
+  <a href="news.html"       data-page="news"       data-en="News"       data-pt="Notícias">News</a>
+  <a href="team.html"       data-page="team"       data-en="Team"       data-pt="Equipa">Team</a>
+  <a href="contact.html"    data-page="contact"    data-en="Contact"    data-pt="Contacto">Contact</a>
+</div>
+
+<!-- HOME HERO -->
+<section id="home-hero">
+  <div class="blob" style="width:320px;height:320px;top:20%;left:4%;opacity:.8;animation-duration:5s"></div>
+  <div class="blob" style="width:200px;height:200px;top:58%;left:10%;opacity:.5;animation-duration:7s;animation-delay:1.5s"></div>
+  <div class="blob" style="width:400px;height:400px;top:18%;right:3%;opacity:.6;animation-duration:6s;animation-delay:.8s"></div>
+  <div class="blob" style="width:150px;height:150px;bottom:22%;right:15%;opacity:.4;animation-duration:5.5s;animation-delay:2s"></div>
+  <div class="hero-content">
+    <div class="hero-logo"><img id="hero-logo-img" src="logos/transferir.png" alt="Planktastic"></div>
+    <h1 class="hero-title">
+      <span data-editable="hero-pre">From </span><span class="hl"><span data-editable="hero-highlight">Microplastics</span></span><span data-editable="hero-mid"> to Marine Ecosystems:</span><br>
+      <span data-editable="hero-subtitle">Understanding the Invisible Threat</span>
+    </h1>
+    <p class="hero-desc" data-editable="hero-desc">Planktastic investigates how microplastics affect plankton — the microscopic organisms that underpin all life in the ocean — using a novel combination of field ecology and autonomous detection technology.</p>
+  </div>
+  <div class="scroll-hint">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    <span data-en="Explore" data-pt="Explorar">Explore</span>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 2880 180" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,90 C240,160 480,20 720,90 C960,160 1200,20 1440,90 C1680,160 1920,20 2160,90 C2400,160 2640,20 2880,90 L2880,180 L0,180 Z" fill="rgba(255,255,255,0.04)"/>
+    </svg>
+  </div>
+</section>
+
+<!-- INTRO + BUTTONS -->
+<section class="sec sec-light" style="position:relative;z-index:1">
+  <div class="wrap">
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:2;margin-top:-1.4rem;margin-bottom:3.5rem">
+      <a class="btn-solid" href="about.html" data-en="Discover the Project" data-pt="Conhecer o Projeto">Discover the Project</a>
+      <a class="btn-outline" style="border-color:var(--cyan);color:var(--cyan)" href="activities.html" data-en="Our Activities" data-pt="As Nossas Atividades">Our Activities</a>
+    </div>
+    <div class="home-intro-wrap reveal">
+      <div class="sec-kicker center" data-en="About Planktastic" data-pt="Sobre o Planktastic">About Planktastic</div>
+      <h2 class="sec-title center" style="margin-bottom:1.2rem" data-editable="home-intro-title">A New Approach to Microplastics Research</h2>
+      <p data-editable="home-intro-body">PLANKTASTIC is an interdisciplinary research project investigating how microplastics affect plankton — the foundation of marine food webs. By integrating field monitoring with an innovative in-situ detection system and advanced ecological analysis, PLANKTASTIC will generate new evidence on the biological and ecological impacts of microplastics on plankton communities and marine ecosystem functioning.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE CARDS -->
+<section class="sec sec-tinted">
+  <div class="wrap">
+    <div class="home-cards-grid">
+      <div class="home-card reveal">
+        <div class="hc-img" data-img-editable="card1-img">
+          <span class="hc-emoji">🔬</span>
+        </div>
+        <div class="hc-body">
+          <h3 data-editable="card1-title">Project Vision</h3>
+          <p data-editable="card1-body">Understanding and quantifying the ecological impacts of microplastics on plankton communities and marine ecosystem functioning across estuarine and coastal environments.</p>
+          <a class="hc-link" href="about.html" data-en="Discover our objectives →" data-pt="Descobrir os objetivos →">Discover our objectives →</a>
+        </div>
+      </div>
+      <div class="home-card reveal" style="transition-delay:.1s">
+        <div class="hc-img" data-img-editable="card2-img" style="background:linear-gradient(135deg,#003060,#1464c8 60%,#2878f0)">
+          <span class="hc-emoji">📡</span>
+        </div>
+        <div class="hc-body">
+          <h3 data-editable="card2-title">Research Approach</h3>
+          <p data-editable="card2-body">Six interconnected work packages linking field ecological monitoring, an autonomous in-situ detection system, and ecological and biological impact assessments.</p>
+          <a class="hc-link" href="activities.html" data-en="Explore our methods →" data-pt="Explorar os métodos →">Explore our methods →</a>
+        </div>
+      </div>
+      <div class="home-card reveal" style="transition-delay:.2s">
+        <div class="hc-img" data-img-editable="card3-img" style="background:linear-gradient(135deg,#001e40,#003878 50%,#0066b0)">
+          <span class="hc-emoji">🌊</span>
+        </div>
+        <div class="hc-body">
+          <h3 data-editable="card3-title">Project Updates</h3>
+          <p data-editable="card3-body">Field sampling campaigns, milestone achievements, stakeholder workshops and dissemination events — follow Planktastic's progress from launch to final framework.</p>
+          <a class="hc-link" href="news.html" data-en="Follow our progress →" data-pt="Acompanhar o progresso →">Follow our progress →</a>
+        </div>
+      </div>
+      <div class="home-card reveal" style="transition-delay:.3s">
+        <div class="hc-img" data-img-editable="card4-img" style="background:linear-gradient(135deg,#002848,#004a80 50%,#0090c0)">
+          <span class="hc-emoji">✉️</span>
+        </div>
+        <div class="hc-body">
+          <h3 data-editable="card4-title">Get in Touch</h3>
+          <p data-editable="card4-body">Collaborate, ask questions, or subscribe to our mailing list for updates on microplastics research, new datasets and project milestones.</p>
+          <a class="hc-link" href="contact.html" data-en="Contact the team →" data-pt="Contactar a equipa →">Contact the team →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS PREVIEW -->
+<section class="sec sec-light">
+  <div class="wrap">
+    <div class="sec-kicker center reveal" data-en="Recent News" data-pt="Notícias Recentes">Recent News</div>
+    <h2 class="sec-title center reveal" style="margin-bottom:2.5rem" data-en="Latest Updates" data-pt="Últimas Atualizações">Latest Updates</h2>
+    <div class="home-news-grid" id="home-news-grid">
+      <div class="news-card reveal">
+        <div class="nc-img" data-img-editable="news1-img"><span class="nc-emoji">🦑</span></div>
+        <div class="nc-body">
+          <div class="nc-tag" data-editable="news1-tag">Project Launch · Jan 2025</div>
+          <h3 data-editable="news1-title">Planktastic Kick-off Meeting</h3>
+          <p data-editable="news1-body">Planktastic officially launched with a kick-off meeting bringing together the CIIMAR and INESC TEC teams.</p>
+          <a class="nc-more" href="news.html" data-en="Read more →" data-pt="Ler mais →">Read more →</a>
+        </div>
+      </div>
+      <div class="news-card reveal" style="transition-delay:.1s">
+        <div class="nc-img" data-img-editable="news2-img" style="background:linear-gradient(135deg,#002848,#1464c8 55%,#2878f0)"><span class="nc-emoji">🌊</span></div>
+        <div class="nc-body">
+          <div class="nc-tag" data-editable="news2-tag">Field Work · Spring 2025</div>
+          <h3 data-editable="news2-title">First Field Campaigns Begin</h3>
+          <p data-editable="news2-body">Seasonal sampling begins at the Douro and Lima estuaries, collecting the first plankton and microplastics samples.</p>
+          <a class="nc-more" href="news.html" data-en="Read more →" data-pt="Ler mais →">Read more →</a>
+        </div>
+      </div>
+      <div class="news-card reveal" style="transition-delay:.2s">
+        <div class="nc-img" data-img-editable="news3-img" style="background:linear-gradient(135deg,#001e40,#003878 55%,#0090c0)"><span class="nc-emoji">📣</span></div>
+        <div class="nc-body">
+          <div class="nc-tag" data-editable="news3-tag">Engagement · Sep 2025</div>
+          <h3 data-editable="news3-title">First Stakeholder Workshop</h3>
+          <p data-editable="news3-body">Environmental managers, fisheries experts and NGOs gathered for Planktastic's first stakeholder workshop.</p>
+          <a class="nc-more" href="news.html" data-en="Read more →" data-pt="Ler mais →">Read more →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="partner-bar">
+    <div class="wrap">
+      <div class="pbar-inner">
+        <div class="pbar-col">
+          <div class="pbar-label" data-en="PARTNERS" data-pt="PARCEIROS">PARTNERS</div>
+          <div class="pbar-logos">
+            <img src="logos/ciimar_logo_cores.png" alt="CIIMAR" class="logo-partner">
+            <img src="logos/inesctec.png" alt="INESC TEC" class="logo-partner">
+          </div>
+        </div>
+        <div class="pbar-sep"></div>
+        <div class="pbar-col">
+          <div class="pbar-label" data-en="FUNDED BY" data-pt="FINANCIADO POR">FUNDED BY</div>
+          <div class="pbar-logos">
+            <img src="logos/compete2030.png" alt="COMPETE 2030 · Portugal 2030 · EU" class="logo-compete">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bottom"><div class="wrap"><span>© 2025 Planktastic — CIIMAR &amp; INESC TEC | COMPETE2030-FEDER-00801600</span></div></div>
+</footer>
+
+<script src="js/content-data.js"></script>
+<script src="js/common.js"></script>
+</body>
+</html>
+
+

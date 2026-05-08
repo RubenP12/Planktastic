@@ -73,6 +73,7 @@
 
     // Render news (if relevant containers exist on this page)
     if (d.news && d.news.length) {
+      window.__boNewsItems = d.news;
       var _nc = function (item) {
         var ig = item.img ? 'background-image:url(' + item.img + ');background-size:cover;background-position:center;' : '';
         return '<div class="news-card reveal">' +
@@ -321,6 +322,29 @@ function setLang(lang) {
         el.textContent = v;
       });
     });
+  }
+
+  // Re-render news grids with correct language (uses tag_pt/title_pt/body_pt if available)
+  if (window.__boNewsItems && window.__boNewsItems.length) {
+    var usePt = lang === 'pt';
+    var _renderNc = function (item) {
+      var tag   = (usePt && item.tag_pt)   ? item.tag_pt   : (item.tag   || '');
+      var title = (usePt && item.title_pt) ? item.title_pt : (item.title || 'Untitled');
+      var body  = (usePt && item.body_pt)  ? item.body_pt  : (item.body  || '');
+      var ig = item.img ? 'background-image:url(' + item.img + ');background-size:cover;background-position:center;' : '';
+      return '<div class="news-card reveal shown">' +
+        '<div class="nc-img" style="' + ig + '">' + (item.img ? '' : '<span class="nc-emoji">🗞️</span>') + '</div>' +
+        '<div class="nc-body">' +
+        '<div class="nc-tag">' + tag + '</div>' +
+        '<h3>' + title + '</h3>' +
+        '<p>' + body + '</p>' +
+        '<a class="nc-more" href="news.html" data-en="Read more →" data-pt="Ler mais →">' + (lang === 'pt' ? 'Ler mais →' : 'Read more →') + '</a>' +
+        '</div></div>';
+    };
+    var hg = document.getElementById('home-news-grid');
+    if (hg) hg.innerHTML = window.__boNewsItems.slice(0, 3).map(_renderNc).join('');
+    var ng = document.getElementById('news-page-grid');
+    if (ng) ng.innerHTML = window.__boNewsItems.map(_renderNc).join('');
   }
 }
 

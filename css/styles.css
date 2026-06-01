@@ -47,6 +47,10 @@ a{text-decoration:none;color:inherit}
   padding:.38rem .7rem;cursor:pointer;transition:background .2s,color .2s;
 }
 .ls-btn.active{background:var(--cyan);color:var(--dark)}
+.nav-socials{display:flex;gap:.3rem;align-items:center;margin-right:.2rem}
+.nav-socials .social-ico{width:27px;height:27px;border-color:rgba(20,180,220,.22);color:rgba(255,255,255,.5)}
+.nav-socials .social-ico svg{width:13px;height:13px}
+.nav-socials .social-ico:hover{background:var(--cyan);color:var(--dark);border-color:var(--cyan)}
 .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
 .nav-hamburger span{width:22px;height:2px;background:#fff;border-radius:2px;display:block}
 .mobile-menu{
@@ -282,7 +286,7 @@ input:focus,textarea:focus{border-color:var(--cyan)}
 
 /* ─── RESPONSIVE ─────────────────────────── */
 @media(max-width:900px){
-  .nav-links{display:none}.nav-hamburger{display:flex}
+  .nav-links{display:none}.nav-hamburger{display:flex}.nav-socials{display:none}
   .home-cards-grid,.aims-grid,.contact-grid{grid-template-columns:1fr}
   .home-news-grid,.news-page-grid{grid-template-columns:1fr}
   .wp-panel.active{grid-template-columns:1fr;gap:1.5rem}

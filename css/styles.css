@@ -100,7 +100,7 @@ h2.sec-title.white{color:#fff}h2.sec-title.center{text-align:center}
 .hero-content{position:relative;z-index:2;max-width:780px;padding:0 2rem}
 .hero-logo{margin:0 auto 2.8rem;display:inline-block}
 .hero-logo img{height:124px;width:auto}
-.hero-title{font-family:var(--H);font-size:clamp(1.9rem,4vw,3rem);font-weight:800;line-height:1.18;color:#fff;margin-bottom:1.3rem;letter-spacing:-.01em}
+.hero-title{font-family:var(--H);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;line-height:1.18;color:#fff;margin-bottom:1.3rem;letter-spacing:-.01em}
 .hero-title .hl{color:var(--cyan)}
 .hero-desc{font-size:1.04rem;font-weight:300;color:rgba(255,255,255,.62);line-height:1.9;max-width:620px;margin:0 auto 2.5rem}
 .hero-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-bottom:2.8rem}

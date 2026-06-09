@@ -117,11 +117,18 @@
   }
 })();
 
+// Capture hero heading EN state after backoffice data is applied (used to restore when switching back to EN)
+var __heroEnState = {};
+(function () {
+  ['hero-pre', 'hero-highlight', 'hero-mid', 'hero-subtitle'].forEach(function (k) {
+    var els = document.querySelectorAll('[data-editable="' + k + '"]');
+    if (els.length) __heroEnState[k] = els[0].textContent;
+  });
+})();
+
 // ─── LANGUAGE ─────────────────────────────
 var TRANSLATIONS = {
   en: {
-    'hero-highlight': 'Microplastics',
-    'hero-subtitle': 'Understanding the Invisible Threat',
     'hero-desc': 'Planktastic investigates how microplastics affect plankton — the microscopic organisms that underpin all life in the ocean — using a novel combination of field ecology and autonomous detection technology.',
     'home-intro-title': 'A New Approach to Microplastics Research',
     'home-intro-body': 'PLANKTASTIC is an interdisciplinary research project investigating how microplastics affect plankton — the foundation of marine food webs. By integrating field monitoring with an innovative in-situ detection system and advanced ecological analysis, PLANKTASTIC will generate new evidence on the biological and ecological impacts of microplastics on plankton communities and marine ecosystem functioning.',
@@ -194,7 +201,6 @@ var TRANSLATIONS = {
     'act-kto3-body': 'Publishing all field and laboratory data openly via EMODnet and CIIMAR Watch, following FAIR data principles and EU open science policy.',
     'act-kto4-title': 'Science Communication',
     'act-kto4-body': 'Itinerant exhibition with CMIA Matosinhos, open-access publications, conference presentations and school outreach — raising awareness of plastic pollution and the vital role of plankton.',
-    'hero-pre': 'From ', 'hero-mid': ' to Marine Ecosystems:'
   },
   pt: {
     'hero-highlight': 'Microplásticos',
@@ -318,6 +324,17 @@ function setLang(lang) {
       var k = entry[0], v = entry[1];
       if (!v) return;
       if (enT[k] && v === enT[k]) return;
+      document.querySelectorAll('[data-editable="' + k + '"]').forEach(function (el) {
+        el.textContent = v;
+      });
+    });
+  }
+
+  // Restore hero heading EN state when switching back to EN
+  if (lang === 'en') {
+    Object.keys(__heroEnState).forEach(function (k) {
+      var v = __heroEnState[k];
+      if (!v) return;
       document.querySelectorAll('[data-editable="' + k + '"]').forEach(function (el) {
         el.textContent = v;
       });

@@ -117,12 +117,12 @@
   }
 })();
 
-// Capture hero heading EN state after backoffice data is applied (used to restore when switching back to EN)
-var __heroEnState = {};
+// Capture all data-editable EN state after backoffice data is applied (used to restore when switching back to EN)
+var __enState = {};
 (function () {
-  ['hero-pre', 'hero-highlight', 'hero-mid', 'hero-subtitle'].forEach(function (k) {
-    var els = document.querySelectorAll('[data-editable="' + k + '"]');
-    if (els.length) __heroEnState[k] = els[0].textContent;
+  document.querySelectorAll('[data-editable]').forEach(function (el) {
+    var k = el.getAttribute('data-editable');
+    if (k && !__enState[k]) __enState[k] = el.textContent;
   });
 })();
 
@@ -330,10 +330,10 @@ function setLang(lang) {
     });
   }
 
-  // Restore hero heading EN state when switching back to EN
+  // Restore all EN state when switching back to EN (overrides any hardcoded TRANSLATIONS.en values)
   if (lang === 'en') {
-    Object.keys(__heroEnState).forEach(function (k) {
-      var v = __heroEnState[k];
+    Object.keys(__enState).forEach(function (k) {
+      var v = __enState[k];
       if (!v) return;
       document.querySelectorAll('[data-editable="' + k + '"]').forEach(function (el) {
         el.textContent = v;

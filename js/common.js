@@ -82,7 +82,7 @@
           '<div class="nc-tag">' + (item.tag || '') + '</div>' +
           '<h3>' + (item.title || 'Untitled') + '</h3>' +
           '<p>' + (item.body || '') + '</p>' +
-          '<a class="nc-more" href="news.html" data-en="Read more →" data-pt="Ler mais →">Read more →</a>' +
+          (item.content_en ? '<a class="nc-more" href="news-article.html?id=' + item.id + '" data-en="Read more →" data-pt="Ler mais →">Read more →</a>' : (item.url ? '<a class="nc-more" href="' + item.url + '" target="_blank" rel="noopener" data-en="Read more →" data-pt="Ler mais →">Read more →</a>' : '')) +
           '</div></div>';
       };
       var hg = document.getElementById('home-news-grid');
@@ -338,7 +338,7 @@ function setLang(lang) {
         '<div class="nc-tag">' + tag + '</div>' +
         '<h3>' + title + '</h3>' +
         '<p>' + body + '</p>' +
-        '<a class="nc-more" href="news.html" data-en="Read more →" data-pt="Ler mais →">' + (lang === 'pt' ? 'Ler mais →' : 'Read more →') + '</a>' +
+        (item.content_en ? '<a class="nc-more" href="news-article.html?id=' + item.id + '" data-en="Read more →" data-pt="Ler mais →">' + (lang === 'pt' ? 'Ler mais →' : 'Read more →') + '</a>' : (item.url ? '<a class="nc-more" href="' + item.url + '" target="_blank" rel="noopener" data-en="Read more →" data-pt="Ler mais →">' + (lang === 'pt' ? 'Ler mais →' : 'Read more →') + '</a>' : '')) +
         '</div></div>';
     };
     var hg = document.getElementById('home-news-grid');

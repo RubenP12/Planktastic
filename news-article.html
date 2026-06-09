@@ -14,11 +14,27 @@
     gtag('config', 'G-8R17SDMHJL');
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Planktastic — Resources</title>
+  <title>Planktastic — News</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css?v=1">
+  <style>
+    .art-back{display:inline-flex;align-items:center;gap:.45rem;font-family:'Raleway',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s}
+    .art-back:hover{color:#fff}
+    .art-back svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    .art-wrap{max-width:740px;margin:0 auto;padding:2.5rem 0 4rem}
+    .art-hero{width:100%;height:360px;border-radius:8px;background:linear-gradient(135deg,var(--navy),var(--blue) 60%,var(--cyan));background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;font-size:4rem;margin-bottom:2rem;overflow:hidden}
+    .art-tag{font-family:'Raleway',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);margin-bottom:.85rem}
+    .art-title{font-family:'Raleway',sans-serif;font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:800;color:var(--navy);line-height:1.2;letter-spacing:-.02em;margin-bottom:1.2rem}
+    .art-summary{font-size:1.08rem;color:var(--muted);line-height:1.75;font-style:italic;border-left:3px solid var(--cyan);padding-left:1.1rem;margin-bottom:2rem}
+    .art-body{color:var(--text);line-height:1.8;font-size:.97rem}
+    .art-body p{margin-bottom:1.2rem}
+    .art-body p:last-child{margin-bottom:0}
+    .art-not-found{text-align:center;padding:4rem 1rem;color:var(--muted);font-family:'Raleway',sans-serif}
+    .art-not-found h2{font-size:1.4rem;margin-bottom:.75rem;color:var(--navy)}
+    .art-not-found a{color:var(--blue);text-decoration:none;font-weight:700}
+  </style>
 </head>
 <body>
 
@@ -67,34 +83,18 @@
 </div>
 
 <!-- PAGE HEADER -->
-<div class="page-header">
-  <h1 data-en="Resources" data-pt="Resultados">Resources</h1>
-  <p data-en="Publications, datasets and scientific contributions from Planktastic" data-pt="Publicações, conjuntos de dados e contribuições científicas do Planktastic">Publications, datasets and scientific contributions from Planktastic</p>
+<div class="page-header" style="padding-bottom:1.5rem">
+  <a href="news.html" class="art-back">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    <span data-en="Back to News" data-pt="Voltar às Notícias">Back to News</span>
+  </a>
 </div>
 
-<!-- OUTPUTS CONTENT -->
+<!-- ARTICLE CONTENT -->
 <section class="sec sec-light">
   <div class="wrap">
-    <div class="output-section reveal">
-      <h3 data-en="Publications" data-pt="Publicações">Publications</h3>
-      <div class="output-empty">
-        <strong data-editable="outputs-pub-label"></strong>
-        <p data-editable="outputs-pub">Scientific publications will be listed here as the project progresses. All publications will be open-access, following FCT and EU open science policy.</p>
-      </div>
-    </div>
-    <div class="output-section reveal">
-      <h3 data-en="Datasets" data-pt="Base de Dados">Datasets</h3>
-      <div class="output-empty">
-        <strong data-editable="outputs-data-label"></strong>
-        <p data-editable="outputs-data">The open-access FAIR baseline dataset of microplastics and plankton from Portuguese estuaries will be available here from December 2025.</p>
-      </div>
-    </div>
-    <div class="output-section reveal">
-      <h3 data-en="Conference Presentations" data-pt="Apresentações em Conferências">Conference Presentations</h3>
-      <div class="output-empty">
-        <strong data-editable="outputs-conf-label"></strong>
-        <p data-editable="outputs-conf">Conference presentations and posters will be listed here as the team participates in national and international scientific meetings.</p>
-      </div>
+    <div class="art-wrap" id="article-container">
+      <!-- rendered by JS below -->
     </div>
   </div>
 </section>
@@ -126,7 +126,68 @@
 
 <script src="js/content-data.js?v=1"></script>
 <script src="js/common.js?v=1"></script>
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var itemId = params.get('id');
+  var items  = window.__boNewsItems || [];
+  var item   = items.find(function (n) { return n.id === itemId; });
+
+  function _esc(s) {
+    return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function _paragraphs(text) {
+    if (!text) return '';
+    return text.split(/\n\s*\n/).map(function (p) {
+      return '<p>' + _esc(p.trim()).replace(/\n/g, '<br>') + '</p>';
+    }).filter(function (p) { return p !== '<p></p>'; }).join('');
+  }
+
+  function render(lang) {
+    var container = document.getElementById('article-container');
+    if (!container) return;
+
+    if (!item) {
+      container.innerHTML =
+        '<div class="art-not-found">' +
+          '<h2>' + (lang === 'pt' ? 'Artigo não encontrado' : 'Article not found') + '</h2>' +
+          '<p><a href="news.html">' + (lang === 'pt' ? '← Voltar às Notícias' : '← Back to News') + '</a></p>' +
+        '</div>';
+      return;
+    }
+
+    var usePt   = lang === 'pt';
+    var tag     = (usePt && item.tag_pt)      ? item.tag_pt      : (item.tag   || '');
+    var title   = (usePt && item.title_pt)    ? item.title_pt    : (item.title || '');
+    var summary = (usePt && item.body_pt)     ? item.body_pt     : (item.body  || '');
+    var content = (usePt && item.content_pt)  ? item.content_pt  : (item.content_en || '');
+
+    var imgStyle = item.img
+      ? 'background-image:url(' + item.img + ');background-size:cover;background-position:center'
+      : '';
+
+    var html =
+      '<div class="art-hero" style="' + imgStyle + '">' + (item.img ? '' : '<span>🗞️</span>') + '</div>' +
+      (tag    ? '<div class="art-tag">' + _esc(tag) + '</div>' : '') +
+      (title  ? '<h1 class="art-title">' + _esc(title) + '</h1>' : '') +
+      (summary ? '<div class="art-summary">' + _esc(summary) + '</div>' : '') +
+      (content ? '<div class="art-body">' + _paragraphs(content) + '</div>' : '');
+
+    container.innerHTML = html;
+    document.title = 'Planktastic — ' + (title || 'News');
+  }
+
+  // Initial render
+  render(localStorage.getItem('planktastic_lang') || 'en');
+
+  // Hook into setLang so article re-renders on language switch
+  var _origSetLang = window.setLang;
+  window.setLang = function (lang) {
+    _origSetLang(lang);
+    render(lang);
+  };
+})();
+</script>
 </body>
 </html>
-
-

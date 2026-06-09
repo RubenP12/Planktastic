@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -14,7 +14,7 @@
     gtag('config', 'G-8R17SDMHJL');
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Planktastic — News</title>
+  <title>Planktastic â€” News</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
@@ -45,11 +45,11 @@
       <img id="nav-logo-img" src="logos/transferir.png" alt="Planktastic">
     </a>
     <div class="nav-links" id="nav-links">
-      <a href="index.html"      data-page="home"       data-en="Home"       data-pt="Início">Home</a>
+      <a href="index.html"      data-page="home"       data-en="Home"       data-pt="InÃ­cio">Home</a>
       <a href="about.html"      data-page="about"      data-en="About"      data-pt="Sobre">About</a>
       <a href="activities.html" data-page="activities" data-en="Activities"  data-pt="Atividades">Activities</a>
       <a href="outputs.html"    data-page="outputs"    data-en="Resources"  data-pt="Resultados">Resources</a>
-      <a href="news.html"       data-page="news"       data-en="News"       data-pt="Notícias">News</a>
+      <a href="news.html"       data-page="news"       data-en="News"       data-pt="NotÃ­cias">News</a>
       <a href="team.html"       data-page="team"       data-en="Team"       data-pt="Equipa">Team</a>
       <a href="contact.html"    data-page="contact"    data-en="Contact"    data-pt="Contacto">Contact</a>
     </div>
@@ -73,11 +73,11 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobile-menu">
-  <a href="index.html"      data-page="home"       data-en="Home"       data-pt="Início">Home</a>
+  <a href="index.html"      data-page="home"       data-en="Home"       data-pt="InÃ­cio">Home</a>
   <a href="about.html"      data-page="about"      data-en="About"      data-pt="Sobre">About</a>
   <a href="activities.html" data-page="activities" data-en="Activities"  data-pt="Atividades">Activities</a>
   <a href="outputs.html"    data-page="outputs"    data-en="Resources"  data-pt="Resultados">Resources</a>
-  <a href="news.html"       data-page="news"       data-en="News"       data-pt="Notícias">News</a>
+  <a href="news.html"       data-page="news"       data-en="News"       data-pt="NotÃ­cias">News</a>
   <a href="team.html"       data-page="team"       data-en="Team"       data-pt="Equipa">Team</a>
   <a href="contact.html"    data-page="contact"    data-en="Contact"    data-pt="Contacto">Contact</a>
 </div>
@@ -86,7 +86,7 @@
 <div class="page-header" style="padding-bottom:1.5rem">
   <a href="news.html" class="art-back">
     <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-    <span data-en="Back to News" data-pt="Voltar às Notícias">Back to News</span>
+    <span data-en="Back to News" data-pt="Voltar Ã s NotÃ­cias">Back to News</span>
   </a>
 </div>
 
@@ -115,17 +115,17 @@
         <div class="pbar-col">
           <div class="pbar-label" data-en="FUNDED BY" data-pt="FINANCIADO POR">FUNDED BY</div>
           <div class="pbar-logos">
-            <img src="logos/compete2030.png" alt="COMPETE 2030 · Portugal 2030 · EU" class="logo-compete">
+            <img src="logos/compete2030.png" alt="COMPETE 2030 Â· Portugal 2030 Â· EU" class="logo-compete">
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="ft-bottom"><div class="wrap"><span>© 2025 Planktastic — CIIMAR &amp; INESC TEC | COMPETE2030-FEDER-00801600</span></div></div>
+  <div class="ft-bottom"><div class="wrap"><span>Â© 2025 Planktastic â€” CIIMAR &amp; INESC TEC | COMPETE2030-FEDER-00801600</span></div></div>
 </footer>
 
-<script src="js/content-data.js?v=1781011410720"></script>
-<script src="js/common.js?v=1"></script>
+<script src="js/content-data.js?v=1"></script>
+<script src="js/common.js?v=2"></script>
 <script>
 (function () {
   var params = new URLSearchParams(window.location.search);
@@ -151,8 +151,8 @@
     if (!item) {
       container.innerHTML =
         '<div class="art-not-found">' +
-          '<h2>' + (lang === 'pt' ? 'Artigo não encontrado' : 'Article not found') + '</h2>' +
-          '<p><a href="news.html">' + (lang === 'pt' ? '← Voltar às Notícias' : '← Back to News') + '</a></p>' +
+          '<h2>' + (lang === 'pt' ? 'Artigo nÃ£o encontrado' : 'Article not found') + '</h2>' +
+          '<p><a href="news.html">' + (lang === 'pt' ? 'â† Voltar Ã s NotÃ­cias' : 'â† Back to News') + '</a></p>' +
         '</div>';
       return;
     }
@@ -168,14 +168,14 @@
       : '';
 
     var html =
-      '<div class="art-hero" style="' + imgStyle + '">' + (item.img ? '' : '<span>🗞️</span>') + '</div>' +
+      '<div class="art-hero" style="' + imgStyle + '">' + (item.img ? '' : '<span>ðŸ—žï¸</span>') + '</div>' +
       (tag    ? '<div class="art-tag">' + _esc(tag) + '</div>' : '') +
       (title  ? '<h1 class="art-title">' + _esc(title) + '</h1>' : '') +
       (summary ? '<div class="art-summary">' + _esc(summary) + '</div>' : '') +
       (content ? '<div class="art-body">' + _paragraphs(content) + '</div>' : '');
 
     container.innerHTML = html;
-    document.title = 'Planktastic — ' + (title || 'News');
+    document.title = 'Planktastic â€” ' + (title || 'News');
   }
 
   // Initial render
@@ -191,3 +191,4 @@
 </script>
 </body>
 </html>
+

@@ -125,8 +125,8 @@
   <div class="ft-bottom"><div class="wrap"><span>© 2025 Planktastic — CIIMAR &amp; INESC TEC | COMPETE2030-FEDER-00801600</span></div></div>
 </footer>
 
-<script src="js/content-data.js?v=1"></script>
-<script src="js/common.js?v=3"></script>
+<script src="js/content-data.js?v=1784562245306"></script>
+<script src="js/common.js?v=4"></script>
 <script>
 (function () {
   var params = new URLSearchParams(window.location.search);
@@ -141,7 +141,7 @@
   function _paragraphs(text) {
     if (!text) return '';
     return text.split(/\n\s*\n/).map(function (p) {
-      return '<p>' + _esc(p.trim()).replace(/\n/g, '<br>') + '</p>';
+      return '<p>' + _mdBold(_esc(p.trim())).replace(/\n/g, '<br>') + '</p>';
     }).filter(function (p) { return p !== '<p></p>'; }).join('');
   }
 

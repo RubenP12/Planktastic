@@ -1,3 +1,25 @@
+// ─── LIGHTWEIGHT TEXT FORMATTING (backoffice fields) ──
+// Supports: blank line = paragraph break, **bold**, and a per-paragraph
+// [justify]/[center]/[left]/[right] marker as the first line of a block to
+// override that paragraph's alignment. Blocks with no marker are unaffected
+// (inherit whatever alignment the page's CSS already uses).
+function _mdBold(s) {
+  return s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+}
+function _mdLite(raw) {
+  if (!raw) return '';
+  var esc = function (s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); };
+  return raw.split(/\n\s*\n/).map(function (block) {
+    var lines = block.split('\n').map(function (l) { return l.trim(); }).filter(function (l) { return l.length; });
+    if (!lines.length) return '';
+    var align = null;
+    var m = /^\[(justify|center|left|right)\]$/i.exec(lines[0]);
+    if (m) { align = m[1].toLowerCase(); lines = lines.slice(1); }
+    var html = lines.map(function (l) { return _mdBold(esc(l)); }).join('<br>');
+    return align ? '<span style="display:block;text-align:' + align + '">' + html + '</span>' : html;
+  }).filter(function (b) { return b.length; }).join('<br><br>');
+}
+
 // ─── BACKOFFICE CONTENT LOADER ────────────
 (function () {
   try {
@@ -23,7 +45,7 @@
       var k = entry[0], v = entry[1];
       if (!v) return;
       document.querySelectorAll('[data-editable="' + k + '"]').forEach(function (el) {
-        el.textContent = v;
+        el.innerHTML = _mdLite(v);
       });
     });
 
@@ -122,7 +144,7 @@ var __enState = {};
 (function () {
   document.querySelectorAll('[data-editable]').forEach(function (el) {
     var k = el.getAttribute('data-editable');
-    if (k && !__enState[k]) __enState[k] = el.textContent;
+    if (k && !__enState[k]) __enState[k] = el.innerHTML;
   });
 })();
 
@@ -325,7 +347,7 @@ function setLang(lang) {
       if (!v) return;
       if (enT[k] && v === enT[k]) return;
       document.querySelectorAll('[data-editable="' + k + '"]').forEach(function (el) {
-        el.textContent = v;
+        el.innerHTML = _mdLite(v);
       });
     });
   }
@@ -336,7 +358,7 @@ function setLang(lang) {
       var v = __enState[k];
       if (!v) return;
       document.querySelectorAll('[data-editable="' + k + '"]').forEach(function (el) {
-        el.textContent = v;
+        el.innerHTML = v;
       });
     });
   }

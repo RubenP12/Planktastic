@@ -1,7 +1,7 @@
 // ─── BACKOFFICE CONTENT LOADER ────────────
 (function () {
   try {
-    var d = JSON.parse(localStorage.getItem('planktastic_data') || 'null');
+    var d = JSON.parse(localStorage.getItem('planktastic_data') || 'null') || window.__PLANKTASTIC_DEFAULT_DATA__ || null;
     if (!d) return;
 
     // Migration: restore spaces on hero-pre/hero-mid stripped by old trim bug

@@ -9,11 +9,13 @@ function _mdBold(s) {
 function _mdLite(raw) {
   if (!raw) return '';
   var esc = function (s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); };
+  // Only blank lines are dropped here — intentional leading/trailing spaces on a
+  // line (e.g. "...effects of " butting up against an inline span) are preserved.
   return raw.split(/\n\s*\n/).map(function (block) {
-    var lines = block.split('\n').map(function (l) { return l.trim(); }).filter(function (l) { return l.length; });
+    var lines = block.split('\n').filter(function (l) { return l.trim().length; });
     if (!lines.length) return '';
     var align = null;
-    var m = /^\[(justify|center|left|right)\]$/i.exec(lines[0]);
+    var m = /^\[(justify|center|left|right)\]$/i.exec(lines[0].trim());
     if (m) { align = m[1].toLowerCase(); lines = lines.slice(1); }
     var html = lines.map(function (l) { return _mdBold(esc(l)); }).join('<br>');
     return align ? '<span style="display:block;text-align:' + align + '">' + html + '</span>' : html;
@@ -98,8 +100,9 @@ function _mdLite(raw) {
       window.__boNewsItems = d.news;
       var _nc = function (item) {
         var ig = item.img ? 'background-image:url(' + item.img + ');background-size:cover;background-position:center;' : '';
+        var lb = item.img ? ' data-lightbox-src="' + item.img + '"' : '';
         return '<div class="news-card reveal">' +
-          '<div class="nc-img" style="' + ig + '">' + (item.img ? '' : '<span class="nc-emoji">🗞️</span>') + '</div>' +
+          '<div class="nc-img' + (item.img ? ' lb-trigger' : '') + '" style="' + ig + '"' + lb + '>' + (item.img ? '' : '<span class="nc-emoji">🗞️</span>') + '</div>' +
           '<div class="nc-body">' +
           '<div class="nc-tag">' + (item.tag || '') + '</div>' +
           '<h3>' + (item.title || 'Untitled') + '</h3>' +
@@ -371,8 +374,9 @@ function setLang(lang) {
       var title = (usePt && item.title_pt) ? item.title_pt : (item.title || 'Untitled');
       var body  = (usePt && item.body_pt)  ? item.body_pt  : (item.body  || '');
       var ig = item.img ? 'background-image:url(' + item.img + ');background-size:cover;background-position:center;' : '';
+      var lb = item.img ? ' data-lightbox-src="' + item.img + '"' : '';
       return '<div class="news-card reveal shown">' +
-        '<div class="nc-img" style="' + ig + '">' + (item.img ? '' : '<span class="nc-emoji">🗞️</span>') + '</div>' +
+        '<div class="nc-img' + (item.img ? ' lb-trigger' : '') + '" style="' + ig + '"' + lb + '>' + (item.img ? '' : '<span class="nc-emoji">🗞️</span>') + '</div>' +
         '<div class="nc-body">' +
         '<div class="nc-tag">' + tag + '</div>' +
         '<h3>' + title + '</h3>' +
@@ -417,6 +421,32 @@ function toggleMobile() {
   var menu = document.getElementById('mobile-menu');
   if (menu) menu.classList.toggle('open');
 }
+
+// ─── LIGHTBOX (click a news image to enlarge it) ──
+(function () {
+  var overlay = document.createElement('div');
+  overlay.className = 'lightbox-overlay';
+  overlay.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button><img alt="">';
+  document.body.appendChild(overlay);
+  var imgEl = overlay.querySelector('img');
+
+  function openLightbox(src) {
+    imgEl.src = src;
+    overlay.classList.add('open');
+  }
+  function closeLightbox() {
+    overlay.classList.remove('open');
+  }
+
+  document.addEventListener('click', function (e) {
+    var trigger = e.target.closest('[data-lightbox-src]');
+    if (trigger) { openLightbox(trigger.getAttribute('data-lightbox-src')); return; }
+    if (e.target === overlay || e.target.classList.contains('lightbox-close')) closeLightbox();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+})();
 
 // ─── REVEAL ANIMATIONS ────────────────────
 var revealObs = new IntersectionObserver(function (entries) {

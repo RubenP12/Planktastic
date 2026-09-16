@@ -156,7 +156,7 @@ var TRANSLATIONS = {
   en: {
     'hero-desc': 'Planktastic investigates how microplastics affect plankton — the microscopic organisms that underpin all life in the ocean — using a novel combination of field ecology and autonomous detection technology.',
     'home-intro-title': 'A New Approach to Microplastics Research',
-    'home-intro-body': 'PLANKTASTIC is an interdisciplinary research project investigating how microplastics affect plankton — the foundation of marine food webs. By integrating field monitoring with an innovative in-situ detection system and advanced ecological analysis, PLANKTASTIC will generate new evidence on the biological and ecological impacts of microplastics on plankton communities and marine ecosystem functioning.',
+    'home-intro-body': 'PLANKTASTIC aims to develop a new approach to assess the biological and ecological impacts of microplastics on marine plankton. To achieve this, an open-access database, an autonomous in situ detection system using multispectral imaging and machine learning, and ecological assessment methodologies will be developed. The results will subsequently be integrated into a tool to support the monitoring and environmental management of plastic pollution.',
     'card1-title': 'Project Vision',
     'card1-body': 'Understanding and quantifying the ecological impacts of microplastics on plankton communities and marine ecosystem functioning across estuarine and coastal environments.',
     'card2-title': 'Research Approach',
@@ -232,7 +232,7 @@ var TRANSLATIONS = {
     'hero-subtitle': 'Compreendendo a Ameaça Invisível',
     'hero-desc': 'O Planktastic investiga como os microplásticos afetam o plâncton — os organismos microscópicos que sustentam toda a vida no oceano — utilizando uma combinação inovadora de ecologia de campo e tecnologia de deteção autónoma.',
     'home-intro-title': 'Uma Nova Abordagem à Investigação de Microplásticos',
-    'home-intro-body': 'O PLANKTASTIC é um projeto de investigação interdisciplinar que estuda como os microplásticos afetam o plâncton — a base das cadeias alimentares marinhas. Ao integrar monitorização de campo com um sistema inovador de deteção in-situ e análise ecológica avançada, o PLANKTASTIC gerará novas evidências sobre os impactos biológicos e ecológicos dos microplásticos nas comunidades de plâncton e no funcionamento dos ecossistemas marinhos.',
+    'home-intro-body': 'O PLANKTASTIC visa desenvolver uma nova abordagem para avaliar o impacto biológico e ecológico dos microplásticos no plâncton marinho. Para tal, será desenvolvida uma base de dados de acesso aberto, um sistema autónomo de deteção in situ com imagiologia multiespectral e aprendizagem automática, bem como metodologias de avaliação ecológica. Os resultados serão posteriormente integrados numa ferramenta de apoio à monitorização e gestão ambiental da poluição por plásticos.',
     'card1-title': 'Visão do Projeto',
     'card1-body': 'Compreender e quantificar os impactos ecológicos dos microplásticos nas comunidades de plâncton e no funcionamento dos ecossistemas marinhos em ambientes estuarinos e costeiros.',
     'card2-title': 'Abordagem de Investigação',

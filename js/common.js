@@ -132,10 +132,13 @@ function _mdLite(raw) {
       };
       var ciim = d.team.filter(function (m) { return m.group === 'ciimar'; });
       var ines = d.team.filter(function (m) { return m.group === 'inesc'; });
+      var ext  = d.team.filter(function (m) { return m.group === 'external'; });
       var cg = document.getElementById('team-ciimar-grid');
       if (cg) cg.innerHTML = ciim.length ? ciim.map(_tmc).join('') : '<p class="tm-empty">No members yet.</p>';
       var ig2 = document.getElementById('team-inesc-grid');
       if (ig2) ig2.innerHTML = ines.length ? ines.map(_tmc).join('') : '<p class="tm-empty">No members yet.</p>';
+      var eg = document.getElementById('team-external-grid');
+      if (eg) eg.innerHTML = ext.length ? ext.map(_tmc).join('') : '<p class="tm-empty">No members yet.</p>';
     }
   } catch (e) {
     console.warn('Planktastic content loader error:', e);

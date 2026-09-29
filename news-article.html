@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=1">
+  <link rel="stylesheet" href="css/styles.css?v=2">
   <style>
     .art-back{display:inline-flex;align-items:center;gap:.45rem;font-family:'Raleway',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s}
     .art-back:hover{color:#fff}
@@ -32,6 +32,10 @@
     .art-body{color:var(--text);line-height:1.8;font-size:.97rem}
     .art-body p{margin-bottom:1.2rem}
     .art-body p:last-child{margin-bottom:0}
+    .art-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem;margin-bottom:2rem}
+    .art-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;cursor:pointer;display:block;transition:transform .2s,box-shadow .2s}
+    .art-gallery img:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,30,60,.16)}
+    @media(min-width:640px){.art-gallery{grid-template-columns:repeat(4,1fr)}}
     .art-not-found{text-align:center;padding:4rem 1rem;color:var(--muted);font-family:'Raleway',sans-serif}
     .art-not-found h2{font-size:1.4rem;margin-bottom:.75rem;color:var(--navy)}
     .art-not-found a{color:var(--blue);text-decoration:none;font-weight:700}
@@ -125,8 +129,8 @@
   <div class="ft-bottom"><div class="wrap"><span>© 2025 Planktastic — CIIMAR &amp; INESC TEC | COMPETE2030-FEDER-00801600</span></div></div>
 </footer>
 
-<script src="js/content-data.js?v=1784647022453"></script>
-<script src="js/common.js?v=6"></script>
+<script src="js/content-data.js?v=1790692525069"></script>
+<script src="js/common.js?v=9"></script>
 <script>
 (function () {
   var params = new URLSearchParams(window.location.search);
@@ -169,11 +173,18 @@
       : '';
     var imgAttrs = item.img ? ' data-lightbox-src="' + item.img + '"' : '';
 
+    var gallery = (item.gallery && item.gallery.length)
+      ? '<div class="art-gallery">' + item.gallery.map(function (src) {
+          return '<img src="' + src + '" data-lightbox-src="' + src + '" loading="lazy" alt="">';
+        }).join('') + '</div>'
+      : '';
+
     var html =
       '<div class="art-hero' + (item.img ? ' lb-trigger' : '') + '" style="' + imgStyle + '"' + imgAttrs + '>' + (item.img ? '' : '<span>🗞️</span>') + '</div>' +
       (tag    ? '<div class="art-tag">' + _esc(tag) + '</div>' : '') +
       (title  ? '<h1 class="art-title">' + _esc(title) + '</h1>' : '') +
       (summary ? '<div class="art-summary">' + _esc(summary) + '</div>' : '') +
+      gallery +
       (content ? '<div class="art-body">' + _paragraphs(content) + '</div>' : '');
 
     container.innerHTML = html;
